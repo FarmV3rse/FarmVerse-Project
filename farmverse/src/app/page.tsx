@@ -6,7 +6,6 @@ import LandingPageComponent from "../../components/landing-page/landing-page.com
 import styles from "./page.module.scss";
 
 
-
 // Generate dynamic metadata
 export async function generateMetadata(): Promise<Metadata> {
 
