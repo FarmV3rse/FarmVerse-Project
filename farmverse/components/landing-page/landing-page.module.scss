@@ -1,7 +1,140 @@
 @import "../../styles/global.styles.scss";
 
-.landingPageControl{
-    width: 100vw;
-    height: 100vh;
-    background-color: black;
+
+
+.LandingControl {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+    background-color: white;
+
+    .gotoTopIcon {
+        position: fixed;
+        width: 60px;
+        height: 60px;
+        object-fit: contain;
+        right: 20px;
+        bottom: 20px;
+        cursor: pointer;
+        z-index: 8;
+        color: #2ecc71; // Green accent color
+        transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    
+        &:hover {
+            opacity: 0.8;
+            transform: scale(1.1);
+        }
+    }
+
+    .HeaderControl {
+        display: flex;
+        height: 80px;
+        width: 100%;
+        padding-left: 2%;
+        padding-right: 2%;
+        z-index: 2;
+
+        .HeaderIcon {
+            font-size: 24px;
+            font-family: $fontBold;
+            color: white;
+            margin-top: auto;
+            margin-bottom: auto;
+        }
+
+        .HeaderMenuControl{
+            margin-left: auto;
+            margin-top: auto;
+            margin-bottom: auto;
+            display: flex;
+
+            .MenuItem{
+                margin-left: 36px;
+                font-size: 20px;
+                font-family: $fontRegular;
+                color: white;
+                margin-top: auto;
+                margin-bottom: auto;
+                cursor: pointer;
+
+                &:hover{
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    .coverImageControl {
+        height: 100vh;
+        width: 100%;
+        background-image: url("/assets/images/cover-image.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        display: flex;
+        position: relative; // Ensure the overlay positions correctly
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); // Black overlay (50% opacity)
+            z-index: 1; // Lower than text
+        }
+
+        .arrowDownHere{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin-bottom: 3%;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50px;
+            height: auto;
+            color: white;
+            z-index: 2;
+            cursor: pointer;
+        }
+
+        .TextCover{
+            margin: auto;
+            font-size: 48px;
+            color: white;
+            font-family: $fontBold;
+            position: absolute;
+            top: 50%;
+            text-align: center;
+            bottom: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+        }
+    }
+
+    .SectionControl {
+        display: flex;
+        flex-direction: column;
+        min-height: 400px;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+
+
+        .headerTitle {
+            font-size: 26px;
+            font-family: $fontBold;
+            color: $textPrimary;
+            margin-bottom: 16px;
+        }
+
+        .headerContent{
+            font-size: 18px;
+            font-family: $fontRegular;
+            color: $textGray;
+        }
+    }
 }

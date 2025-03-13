@@ -3,6 +3,7 @@
 import { Metadata } from "next";
 import config from "../../utils/app.config";
 import LandingPageComponent from "../../components/landing-page/landing-page.component";
+import styles from "./page.module.scss";
 
 
 
@@ -47,7 +48,7 @@ export default async function LandingPage() {
   try {
 
     return (
-      <div>
+      <div className={styles.bodyMain}>
         <LandingPageComponent />
       </div>
     );
