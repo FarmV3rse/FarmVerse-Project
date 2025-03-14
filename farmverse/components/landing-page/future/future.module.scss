@@ -1,0 +1,61 @@
+@import "../../../styles/global.styles.scss";
+
+
+.futureFarmVerseSection {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.title {
+    font-size: 44px;
+    font-weight: 600;
+    color: $textPrimary;
+    font-family: $fontMedium;
+    margin-bottom: 40px;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: white;
+    margin-bottom: 30px;
+}
+
+/* Grid Layout */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* Card Styling */
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    }
+}
+
+/* Icon Styling */
+.icon {
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 10px;
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}

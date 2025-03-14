@@ -1,0 +1,70 @@
+@import "../../../styles/global.styles.scss";
+
+
+.contactSection {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.title {
+    font-size: 44px;
+    font-weight: 600;
+    color: $textPrimary;
+    font-family: $fontMedium;
+    margin-bottom: 40px;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: white;
+    margin-bottom: 30px;
+}
+
+/* Contact Grid */
+.contactGrid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 800px;
+    margin: auto;
+}
+
+/* Contact Card */
+.contactCard {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 250px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    text-decoration: none;
+    color: #333;
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    }
+}
+
+/* Icon Styling */
+.icon {
+    font-size: 2rem;
+    color: #27ae60;
+    margin-bottom: 10px;
+}
+
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .contactGrid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contactCard {
+        width: 80%;
+    }
+}

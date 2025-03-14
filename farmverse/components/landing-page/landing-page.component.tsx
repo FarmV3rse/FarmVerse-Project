@@ -4,7 +4,10 @@ import React, { useEffect, useState } from "react";
 import styles from "./landing-page.module.scss";
 import { useDevice } from "../../utils/useDevice";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleDoubleDown, faArrowDown, faBars, faChevronCircleUp } from '@fortawesome/free-solid-svg-icons';
+import { faAngleDoubleDown, faArrowDown, faBars, faChevronCircleUp, faCubes, faExchangeAlt, faLock, faProjectDiagram } from '@fortawesome/free-solid-svg-icons';
+import Roadmap from "./road-map/road-map.component";
+import FutureFarmVerse from "./future/future.component";
+import ContactUs from "./contact-us/contact-us.component";
 const LandingPageComponent = () => {
     const { isMobile, isTablet, isDesktop } = useDevice();
     const [showGoToTop, setShowGoToTop] = useState(false);
@@ -47,11 +50,9 @@ const LandingPageComponent = () => {
                                     <FontAwesomeIcon icon={faBars} className={styles.MenuItem} /> :
                                     <>
                                         <span className={styles.MenuItem} onClick={() => handleScroll("welcome")}>Welcome</span>
-                                        <span className={styles.MenuItem} onClick={() => handleScroll("about")}>About FarmVerse</span>
+                                        <span className={styles.MenuItem} onClick={() => handleScroll("about")}>About Us</span>
                                         <span className={styles.MenuItem} onClick={() => handleScroll("how-it-works")}>How It Works</span>
                                         <span className={styles.MenuItem} onClick={() => handleScroll("why-farmverse")}>Why FarmVerse</span>
-                                        <span className={styles.MenuItem} onClick={() => handleScroll("tech")}>The Tech Behind FarmVerse</span>
-                                        <span className={styles.MenuItem} onClick={() => handleScroll("future")}>Future of FarmVerse</span>
                                         <span className={styles.MenuItem} onClick={() => handleScroll("roadmap")}>Roadmap</span>
                                         <span className={styles.MenuItem} onClick={() => handleScroll("contact")}>Contact Us</span>
                                     </>
@@ -64,99 +65,120 @@ const LandingPageComponent = () => {
                     <span className={styles.TextCover}>Welcome to FarmVerse – The Future of Farming is Here!</span>
                     <FontAwesomeIcon icon={faAngleDoubleDown} className={styles.arrowDownHere}></FontAwesomeIcon>
 
-                 
+
 
                 </div>
                 {showGoToTop && (
                     <FontAwesomeIcon icon={faChevronCircleUp} className={styles.gotoTopIcon} onClick={scrollToTop} />
                 )}
                 <div className={styles.SectionControl} id="about">
-                    <span className={styles.headerTitle}>🌱 Grow, Earn, and Change the World!</span>
-                    <span className={styles.headerContent}>
-                        Imagine a world where farming isn’t just a game—it’s a movement! Welcome to FarmVerse, the revolutionary blockchain-powered farming experience where your digital crops aren’t just pixels—they’re real!
-
-                        ✔️ Grow your farm 🌾
-                        ✔️ Earn rewards 💰
-                        ✔️ Make a real-world impact 🌎
-
-                        What you cultivate in FarmVerse can be exchanged for real produce or sold as NFTs—bridging the gap between virtual and reality!</span>
+                    <div className={styles.contentControl}>
+                        <span className={styles.headerTitle}>Grow, Earn, and Change the World!</span>
+                        <span className={styles.headerContent}>Imagine a world where farming isn’t just a game—it’s a
+                            movement! Welcome to FarmVerse, the revolutionary blockchain-powered
+                            farming experience where your digital crops aren’t just pixels—they’re real!
+                            Yes, you read that right. What you grow in FarmVerse can be exchanged
+                            for actual produce or sold to other players as NFTs. It’s farming redefined, with real-world impact!</span>
+                    </div>
                 </div>
 
                 <div className={styles.SectionControl} id="how-it-works">
-                    <span className={styles.headerTitle}>🚀 How It Works...</span>
-                    <div className={styles.headerContent}>
-                    🔹 Start Your Farm – Choose your land, plant your seeds, and nurture your crops with AI-powered guidance.
-🔹 Harvest and Earn – Trade your crops for real-world produce or sell them as digital assets in the NFT marketplace.
-🔹 Create Real-World Impact – Every harvest supports sustainable farming initiatives, reduces food waste, and promotes eco-friendly agriculture.
+                    <div className={styles.contentControl}>
+                        <span className={styles.headerTitle}>🚀 How It Works...</span>
+                        <span className={styles.headerContent}>Powered by Blockchain: Transparency, ownership, and secure transactions via Smart Contracts</span>
+                        <div className={styles.grid3Control}>
+                            <div className={styles.gridItem}>
+                                <span className={styles.gridTitle}>Start Your Farm</span>
+                                <span className={styles.gridDesc}>Choose your land, plant your seeds, and nurture your crops with AI-powered guidance.</span>
+                            </div>
+                            <div className={styles.gridItem}>
+                                <span className={styles.gridTitle}>Harvest and Earn</span>
+                                <span className={styles.gridDesc}>Trade your crops for real-world produce or sell them as digital assets in the NFT marketplace.</span>
+                            </div>
+                            <div className={styles.gridItem}>
+                                <span className={styles.gridTitle}>Create Real-World Impact</span>
+                                <span className={styles.gridDesc}>Every harvest supports sustainable farming initiatives, reduces food waste, and promotes eco-friendly agriculture.</span>
+                            </div>
+                        </div>
 
-🔗 Powered by Blockchain: Transparency, ownership, and secure transactions via Smart Contracts.
                     </div>
+
+
+
                 </div>
 
                 <div className={styles.SectionControl} id="why-farmverse">
-                    <span className={styles.headerTitle}>🌎 Why FarmVerse Matters...</span>
-                    <div className={styles.headerContent}>
-                    Traditional farming faces major challenges:
-⚠️ Climate change impacts food security
-⚠️ Inefficient distribution leads to food waste
-⚠️ Small farmers struggle to scale their operations
 
-FarmVerse is the solution! By gamifying agriculture, we incentivize a new generation of digital farmers to make real-world change.
+                    <div className={styles.gridLeftRightControl}>
+                        <img src="/assets/images/img-sec-2.jpg" className={styles.gridImgLeft}></img>
+                        <div className={styles.borderControl}>
+                            <span className={styles.gridTitle}>Why FarmVerse Matters...</span>
+                            <div className={styles.gridContentControl}>
+                                <span className={styles.gridContentTitle}>Traditional farming faces major challenges:</span>
+                                <ul className={styles.gridContentValue}>
+                                    <li>Climate change impacts food security</li>
+                                    <li>Inefficient distribution leads to food waste</li>
+                                    <li>Small farmers struggle to scale their operations</li>
+                                </ul>
+                            </div>
+                            <div className={styles.gridContentControl}>
+                                <span className={styles.gridContentTitle}> FarmVerse is the solution! By gamifying agriculture, we incentivize a new generation of digital farmers to make real-world change.</span>
+                                <ul className={styles.gridContentValue}>
+                                    <li>Did You Know?</li>
+                                    <li>Global food demand is expected to rise by 70% by 2050.</li>
+                                    <li>Blockchain traceability reduces fraud in food supply chains, ensuring ethical sourcing.</li>
+                                    <li>Tokenized farming assets empower users with ownership and financial control.</li>
+                                </ul>
+                            </div>
 
-📈 Did You Know?
-✅ Global food demand is expected to rise by 70% by 2050.
-✅ Blockchain traceability reduces fraud in food supply chains, ensuring ethical sourcing.
-✅ Tokenized farming assets empower users with ownership and financial control.
+                        </div>
                     </div>
+
+
                 </div>
 
-                <div className={styles.SectionControl} id="tech">
-                    <span className={styles.headerTitle}>🔗 The Tech Behind FarmVerse...</span>
-                    <div className={styles.headerContent}>
-                    FarmVerse is built on cutting-edge blockchain technology, ensuring:
-✔️ Security & Transparency – Every transaction is immutable and visible on the blockchain.
-✔️ Decentralized Economy – No middlemen. You own your farm, assets, and profits.
-✔️ NFT Integration – Every piece of land, seed, and upgrade can be bought, sold, or traded.
-✔️ Smart Contracts – Automates farming, harvesting, and marketplace transactions.
+                <div className={styles.SectionControl} id="how-it-works">
+                    <div className={styles.contentControl}>
+                        <span className={styles.headerTitle}>The Tech Behind FarmVerse...</span>
+                        <span className={styles.headerContent}>FarmVerse is built on cutting-edge blockchain technology, ensuring:</span>
+                        <div className={styles.grid4Control}>
+                            <div className={styles.gridItem}>
+                                <FontAwesomeIcon icon={faLock} className={styles.gridIcon}></FontAwesomeIcon>
+                                <span className={styles.gridTitle}>Security & Transparency</span>
+                                <span className={styles.gridDesc}>Every transaction is immutable and visible on the blockchain.</span>
+                            </div>
+                            <div className={styles.gridItem}>
+                                <FontAwesomeIcon icon={faProjectDiagram} className={styles.gridIcon}></FontAwesomeIcon>
+                                <span className={styles.gridTitle}>Decentralized Economy</span>
+                                <span className={styles.gridDesc}>No middlemen. You own your farm, assets, and profits.</span>
+                            </div>
+                            <div className={styles.gridItem}>
+                                <FontAwesomeIcon icon={faCubes} className={styles.gridIcon}></FontAwesomeIcon>
+                                <span className={styles.gridTitle}>NFT Integration</span>
+                                <span className={styles.gridDesc}>Every piece of land, seed, and upgrade can be bought, sold, or traded.</span>
+                            </div>
+                            <div className={styles.gridItem}>
+                                <FontAwesomeIcon icon={faCubes} className={styles.gridIcon}></FontAwesomeIcon>
+                                <span className={styles.gridTitle}>Smart Contracts</span>
+                                <span className={styles.gridDesc}>Automates farming, harvesting, and marketplace transactions.</span>
+                            </div>
+                        </div>
 
-A game where you farm, but with real value!
                     </div>
+
                 </div>
+                
 
                 <div className={styles.SectionControl} id="future">
-                    <span className={styles.headerTitle}>🎮 The Future of FarmVerse...</span>
-                    <div className={styles.headerContent}>
-                    🌟 Social & Player Interactions
-👥 Trade & Collaborate – Team up with other farmers, share resources, and boost your earnings.
-🏆 Seasonal Competitions – Win exclusive NFT rewards and rank up on leaderboards.
-🤝 Community Farming – Work together to achieve large-scale farming goals with special benefits.
-
-🤖 AI-Powered Farming & Smart Assistance
-🚜 AI Farming Assistants – Get real-time insights, weather predictions, and crop management tips.
-📊 Adaptive Economy – AI dynamically balances supply and demand, keeping the in-game economy thriving.
-🌿 Smart Crop Recommendations – AI suggests the best crops to grow based on market trends.
-
-💰 A Thriving NFT Marketplace
-🛒 Buy & Sell Digital Crops – Trade with players or exchange for real-world produce.
-🎨 NFT Customization – Upgrade and personalize your farm with rare NFT items.
-🍽️ Farm-to-Table Connection – Your virtual harvest can be converted into real food!
-                    </div>
+                  <FutureFarmVerse></FutureFarmVerse>
                 </div>
 
                 <div className={styles.SectionControl} id="roadmap">
-                    <span className={styles.headerTitle}>📅 Roadmap...</span>
-                    <div className={styles.headerContent}>
-                    ✅ Phase 1 – Alpha Launch (Q1 2025): Smart Contract Integration, NFT Marketplace, Basic Farming.
-🚀 Phase 2 – Beta Expansion (Q2 2025): Community Features, AI Assistants, Real-World Produce Exchange.
-🌎 Phase 3 – Global Impact (Q4 2025): Large-Scale Farming Missions, Sustainability Partnerships, Cross-Chain Expansion.
-
-Join us on this journey and be part of the farming revolution!
-                    </div>
+                    <Roadmap></Roadmap>
                 </div>
 
                 <div className={styles.SectionControl} id="contact">
-                    <span className={styles.headerTitle}>📩 Contact Us</span>
-                    <div className={styles.headerContent}></div>
+                   <ContactUs></ContactUs>
                 </div>
 
             </div>
